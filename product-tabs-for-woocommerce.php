@@ -3,12 +3,12 @@
 Plugin Name: Product Tabs for WooCommerce
 Plugin URI: https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/
 Description: Manage product tabs in WooCommerce. Beautifully.
-Version: 1.5.2
+Version: 1.5.3
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: product-tabs-for-woocommerce
 Domain Path: /langs
-WC tested up to: 7.1
+WC tested up to: 7.8
 */
 
 defined( 'ABSPATH' ) || exit;
