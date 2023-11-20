@@ -1,9 +1,9 @@
-=== Product Tabs for WooCommerce ===
+=== Additional Product Tabs for WooCommerce ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: woocommerce, product tabs, product, tab, tabs, customize, custom, woo, commerce
 Requires at least: 4.4
-Tested up to: 6.3
-Stable tag: 1.5.4
+Tested up to: 6.4
+Stable tag: 1.5.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Manage product tabs in WooCommerce. Beautifully.
 
 == Description ==
 
-**Product Tabs for WooCommerce** plugin lets you:
+**Additional Product Tabs for WooCommerce** plugin lets you:
 
 * Customize WooCommerce **standard product tabs**.
 * Add **custom product tabs** globally for all products, or on per product basis.
@@ -71,6 +71,10 @@ While free version allows you to add one global custom tab and one "per product"
 2. Setting product tabs on per product basis.
 
 == Changelog ==
+
+= 1.5.5 - 20/11/2023 =
+* WC tested up to: 8.3.
+* Tested up to: 6.4.
 
 = 1.5.4 - 25/09/2023 =
 * WC tested up to: 8.1.
