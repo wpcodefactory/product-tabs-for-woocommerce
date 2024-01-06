@@ -32,6 +32,7 @@ class Alg_WC_Product_Tabs_Settings_Global extends Alg_WC_Product_Tabs_Settings_S
 	 * @version 1.6.0
 	 * @since   1.0.0
 	 *
+	 * @todo    (dev) use AJAX instead!
 	 * @todo    (dev) use `wc_get_products()`
 	 * @todo    (dev) correct way to get SKU would be `$product = wc_get_product( $product_id ); $sku = $product->get_sku();`
 	 */

@@ -11,7 +11,7 @@ Manage product tabs in WooCommerce. Beautifully.
 
 == Description ==
 
-**Product Tabs for WooCommerce** plugin lets you:
+**Additional Custom Product Tabs for WooCommerce** plugin lets you:
 
 * Customize WooCommerce **standard product tabs**.
 * Add **custom product tabs** globally for all products, or on per product basis.
