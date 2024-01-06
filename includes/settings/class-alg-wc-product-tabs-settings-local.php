@@ -32,7 +32,7 @@ class Alg_WC_Product_Tabs_Settings_Local extends Alg_WC_Product_Tabs_Settings_Se
 	 * @version 1.5.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (feature) add default title, content, priority
+	 * @todo    (feature) add default title, content, priority
 	 */
 	function get_settings() {
 		$settings = array(

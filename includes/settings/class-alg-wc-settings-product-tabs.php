@@ -20,7 +20,7 @@ class Alg_WC_Settings_Product_Tabs extends WC_Settings_Page {
 	 * @version 1.5.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (desc) better descriptions for all settings section (check plugin homepage)
+	 * @todo    (desc) better descriptions for all settings section (check plugin homepage)
 	 */
 	function __construct() {
 		$this->id    = 'alg_product_tabs';

@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Shortcodes Class
  *
- * @version 1.4.0
+ * @version 1.6.0
  * @since   1.4.0
  *
  * @author  Algoritmika Ltd.
@@ -15,13 +15,21 @@ if ( ! class_exists( 'Alg_WC_Product_Tabs_Shortcodes' ) ) :
 class Alg_WC_Product_Tabs_Shortcodes {
 
 	/**
+	 * product_id.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $product_id;
+
+	/**
 	 * Constructor.
 	 *
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] (feature) add `[alg_wc_pt_option]` shortcode
-	 * @todo    [maybe] (feature) add aliases, e.g. `[alg_wc_pt_product_price]`, `[alg_wc_pt_product_description]`, etc.?
+	 * @todo    (feature) add `[alg_wc_pt_option]` shortcode
+	 * @todo    (feature) add aliases, e.g., `[alg_wc_pt_product_price]`, `[alg_wc_pt_product_description]`, etc.?
 	 */
 	function __construct() {
 		add_shortcode( 'alg_wc_pt_product_function',     array( $this, 'product_function' ) );
@@ -46,9 +54,9 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] (feature) optional formatting, e.g. `wc_price()` (e.g. `$atts['format_func']` or `$atts['output_func']`)
-	 * @todo    [maybe] (feature) add `on_zero` att?
-	 * @todo    [maybe] (feature) add `lang` and `not_lang` atts?
+	 * @todo    (feature) optional formatting, e.g., `wc_price()` (e.g., `$atts['format_func']` or `$atts['output_func']`)
+	 * @todo    (feature) add `on_zero` att?
+	 * @todo    (feature) add `lang` and `not_lang` atts?
 	 */
 	function output( $content, $atts ) {
 		if ( '' === $content || false === $content ) {

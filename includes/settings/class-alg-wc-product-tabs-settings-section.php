@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Section Settings
  *
- * @version 1.4.0
+ * @version 1.6.0
  * @since   1.2.0
  *
  * @author  Algoritmika Ltd.
@@ -13,6 +13,22 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_Product_Tabs_Settings_Section' ) ) :
 
 class Alg_WC_Product_Tabs_Settings_Section {
+
+	/**
+	 * id.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $id;
+
+	/**
+	 * desc.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $desc;
 
 	/**
 	 * Constructor.
@@ -42,9 +58,9 @@ class Alg_WC_Product_Tabs_Settings_Section {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] (desc) better desc!
-	 * @todo    [next] (desc) add link to the "Shortcodes" section on plugin's site
-	 * @todo    [maybe] (desc) examples: `[alg_wc_pt_product_function name="wc_get_formatted_variation" type="global"]`?
+	 * @todo    (desc) better desc!
+	 * @todo    (desc) add link to the "Shortcodes" section on plugin's site
+	 * @todo    (desc) examples: `[alg_wc_pt_product_function name="wc_get_formatted_variation" type="global"]`?
 	 */
 	function get_shortcodes_notes_section( $desc_title_options_only = false ) {
 

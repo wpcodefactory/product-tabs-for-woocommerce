@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Per Product Settings
  *
- * @version 1.5.0
+ * @version 1.6.0
  * @since   1.4.0
  *
  * @author  Algoritmika Ltd.
@@ -20,7 +20,7 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [maybe] (dev) code refactoring?
+	 * @todo    (dev) code refactoring?
 	 */
 	function __construct() {
 		if ( 'yes' === get_option( 'alg_custom_product_tabs_local_enabled', 'yes' ) ) {
@@ -32,10 +32,10 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 	/**
 	 * save_custom_tabs_meta_box.
 	 *
-	 * @version 1.5.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
-	function save_custom_tabs_meta_box( $post_id, $post ) {
+	function save_custom_tabs_meta_box( $product_id, $post ) {
 
 		// Check that we are saving with custom tab metabox displayed.
 		if ( ! isset( $_POST['alg_custom_product_tabs_save_post'] ) ) {
@@ -45,13 +45,13 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 		// Save: title, id, priority, content
 		$options                         = array( 'title', 'id', 'priority', 'content' );
 		$default_total_custom_tabs       = apply_filters( 'alg_wc_product_tabs_local_default', 1 );
-		$total_custom_tabs_before_saving = apply_filters( 'alg_wc_product_tabs_local', '', $post_id );
+		$total_custom_tabs_before_saving = apply_filters( 'alg_wc_product_tabs_local', '', $product_id );
 		$total_custom_tabs_before_saving = ( '' != $total_custom_tabs_before_saving ? $total_custom_tabs_before_saving : $default_total_custom_tabs );
 		for ( $i = 1; $i <= $total_custom_tabs_before_saving; $i++ ) {
 			foreach ( $options as $option ) {
 				$option_id = 'alg_custom_product_tabs_' . $option . '_local_' . $i;
 				if ( isset( $_POST[ $option_id ] ) ) {
-					update_post_meta( $post_id, '_' . $option_id, wp_kses_post( trim( $_POST[ $option_id ] ) ) );
+					update_post_meta( $product_id, '_' . $option_id, wp_kses_post( trim( $_POST[ $option_id ] ) ) );
 				}
 			}
 		}
@@ -59,7 +59,7 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 		// Save: total custom tabs number
 		$option_id         = 'alg_custom_product_tabs_local_total_number';
 		$total_custom_tabs = ( isset( $_POST[ $option_id ] ) ? intval( $_POST[ $option_id ] ) : $default_total_custom_tabs );
-		update_post_meta( $post_id, '_' . $option_id, $total_custom_tabs );
+		update_post_meta( $product_id, '_' . $option_id, $total_custom_tabs );
 	}
 
 	/**
@@ -85,7 +85,7 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 	 * @version 1.3.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (desc) maybe add info about the shortcodes (i.e. `get_shortcodes_notes_section()`)?
+	 * @todo    (desc) maybe add info about the shortcodes (i.e., `get_shortcodes_notes_section()`)?
 	 */
 	function create_custom_tabs_meta_box() {
 

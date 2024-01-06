@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Core Class
  *
- * @version 1.4.0
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -15,16 +15,32 @@ if ( ! class_exists( 'Alg_WC_Product_Tabs_Core' ) ) :
 class Alg_WC_Product_Tabs_Core {
 
 	/**
+	 * tab_keys.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $tab_keys;
+
+	/**
+	 * shortcodes.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 */
+	public $shortcodes;
+
+	/**
 	 * Constructor.
 	 *
 	 * @version 1.4.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] (feature) content: optional `wp_autop()`?
-	 * @todo    [maybe] (feature) content: `wp_oembed_get()`?
-	 * @todo    [maybe] (feature) content/title: optional `do_shortcode`?
-	 * @todo    [maybe] (feature) customizable tab keys?
-	 * @todo    [maybe] (dev) save all options (global, meta) in *arrays*?
+	 * @todo    (feature) content: optional `wp_autop()`?
+	 * @todo    (feature) content: `wp_oembed_get()`?
+	 * @todo    (feature) content/title: optional `do_shortcode`?
+	 * @todo    (feature) customizable tab keys?
+	 * @todo    (dev) save all options (global, meta) in *arrays*?
 	 */
 	function __construct() {
 		if ( 'yes' === get_option( 'alg_woocommerce_product_tabs_enabled', 'yes' ) ) {
@@ -47,9 +63,9 @@ class Alg_WC_Product_Tabs_Core {
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [next] (dev) `get_the_ID()`: check if it's a product's ID (e.g. `get_post_type()`)?
-	 * @todo    [next] (dev) simplify this: remove `version_compare()`?
-	 * @todo    [next] (dev) simplify this: remove `get_parent_id()`?
+	 * @todo    (dev) `get_the_ID()`: check if it's a product's ID (e.g., `get_post_type()`)?
+	 * @todo    (dev) simplify this: remove `version_compare()`?
+	 * @todo    (dev) simplify this: remove `get_parent_id()`?
 	 */
 	function get_current_product_id() {
 		global $product;
@@ -126,7 +142,7 @@ class Alg_WC_Product_Tabs_Core {
 	 * @version 1.4.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (dev) pass `$key` via `$tabs` array (similar to `alg_wc_product_tabs_product_id`) (same in `get_tabs_local()`)?
+	 * @todo    (dev) pass `$key` via `$tabs` array (similar to `alg_wc_product_tabs_product_id`) (same in `get_tabs_local()`)?
 	 */
 	function get_tabs_global( $tabs = array() ) {
 		if ( 'yes' !== get_option( 'alg_wc_product_tabs_global_tabs_enabled', 'yes' ) || ! ( $product_id = $this->get_current_product_id() ) ) {
@@ -222,11 +238,11 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * output_tab_global.
 	 *
-	 * @version 1.4.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	function output_tab_global( $key, $tab ) {
-		$key        = ( isset( $this->tab_keys[ $key ] ) ? $this->tab_keys[ $key ] : $key );
+		$key        = ( $this->tab_keys[ $key ] ?? $key );
 		$product_id = ( ! empty( $tab['alg_wc_product_tabs_product_id'] ) ? $tab['alg_wc_product_tabs_product_id'] : false );
 		echo $this->do_shortcode( get_option( 'alg_custom_product_tabs_content_' . $key, '' ), $product_id );
 	}
@@ -271,11 +287,13 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * output_tab_local.
 	 *
-	 * @version 1.4.0
+	 * @version 1.6.0
 	 * @since   1.0.0
+	 *
+	 * @todo    (dev) `get_the_ID()`?
 	 */
 	function output_tab_local( $key, $tab ) {
-		$key        = ( isset( $this->tab_keys[ $key ] ) ? $this->tab_keys[ $key ] : $key );
+		$key        = ( $this->tab_keys[ $key ] ?? $key );
 		$product_id = ( ! empty( $tab['alg_wc_product_tabs_product_id'] ) ? $tab['alg_wc_product_tabs_product_id'] : false );
 		echo $this->do_shortcode( get_post_meta( get_the_ID(), '_' . 'alg_custom_product_tabs_content_' . $key, true ), $product_id );
 	}
@@ -342,7 +360,7 @@ class Alg_WC_Product_Tabs_Core {
 	 * @version 1.4.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [maybe] (dev) rewrite this, i.e.: `add_filter( 'woocommerce_product_tabs', 'get_tabs_standard' )` etc.?
+	 * @todo    (dev) rewrite this, i.e.: `add_filter( 'woocommerce_product_tabs', 'get_tabs_standard' )` etc.?
 	 */
 	function get_product_tabs( $tabs ) {
 		$tabs = $this->get_tabs_standard( $tabs );

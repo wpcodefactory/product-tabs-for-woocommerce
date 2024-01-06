@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Global Section Settings
  *
- * @version 1.5.0
+ * @version 1.6.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -29,25 +29,25 @@ class Alg_WC_Product_Tabs_Settings_Global extends Alg_WC_Product_Tabs_Settings_S
 	/**
 	 * get_products.
 	 *
-	 * @version 1.2.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (dev) use `wc_get_products()`
-	 * @todo    [later] (dev) correct way to get SKU would be `$product = wc_get_product( $post_id ); $sku = $product->get_sku();`
+	 * @todo    (dev) use `wc_get_products()`
+	 * @todo    (dev) correct way to get SKU would be `$product = wc_get_product( $product_id ); $sku = $product->get_sku();`
 	 */
 	function get_products( $products ) {
 		$do_add_sku = ( 'yes' === get_option( 'alg_custom_product_tabs_global_add_sku_to_products_list', 'no' ) );
-		$args = array(
+		$product_query_args = array(
 			'post_type'      => 'product',
 			'post_status'    => 'any',
 			'posts_per_page' => -1,
 			'fields'         => 'ids',
 		);
-		$loop = new WP_Query( $args );
-		foreach ( $loop->posts as $post_id ) {
-			$products[ $post_id ] = get_the_title( $post_id ) .
-				' (#' . $post_id . ')' .
-				( $do_add_sku && '' !== ( $sku = get_post_meta( $post_id, '_sku', true ) ) ? ' (' . $sku . ')' : '' );
+		$product_loop = new WP_Query( $product_query_args );
+		foreach ( $product_loop->posts as $product_id ) {
+			$products[ $product_id ] = get_the_title( $product_id ) .
+				' (#' . $product_id . ')' .
+				( $do_add_sku && '' !== ( $sku = get_post_meta( $product_id, '_sku', true ) ) ? ' (' . $sku . ')' : '' );
 		}
 		return $products;
 	}
@@ -102,10 +102,10 @@ class Alg_WC_Product_Tabs_Settings_Global extends Alg_WC_Product_Tabs_Settings_S
 	 * @version 1.5.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [later] (desc) tab "ID": better description (i.e. "... visible on frontend (i.e. link)...", "... if empty...", "... will be sanitized..."); same for "local" tabs settings
-	 * @todo    [later] (dev) `alg_custom_product_tabs_title_global_hide_` and `alg_custom_product_tabs_title_global_show_` are mislabeled, should be `alg_custom_product_tabs_global_hide_` and `alg_custom_product_tabs_global_show_`
-	 * @todo    [later] (feature) show/hide tab by *product tags*
-	 * @todo    [maybe] (dev) tab "ID": forbid empty and unsanitized values; same for "local" tabs settings
+	 * @todo    (desc) tab "ID": better description (i.e., "... visible on frontend (i.e., link)...", "... if empty...", "... will be sanitized..."); same for "local" tabs settings
+	 * @todo    (dev) `alg_custom_product_tabs_title_global_hide_` and `alg_custom_product_tabs_title_global_show_` are mislabeled, should be `alg_custom_product_tabs_global_hide_` and `alg_custom_product_tabs_global_show_`
+	 * @todo    (feature) show/hide tab by *product tags*
+	 * @todo    (dev) tab "ID": forbid empty and unsanitized values; same for "local" tabs settings
 	 */
 	function get_settings() {
 		// Prepare data

@@ -20,7 +20,7 @@ class Alg_WC_Product_Tabs_Settings_Variations extends Alg_WC_Product_Tabs_Settin
 	 * @version 1.4.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [maybe] (desc) rename to "Custom Tabs: Variations Tabs"?
+	 * @todo    (desc) rename to "Custom Tabs: Variations Tabs"?
 	 */
 	function __construct() {
 		$this->id   = 'variations';
@@ -34,8 +34,8 @@ class Alg_WC_Product_Tabs_Settings_Variations extends Alg_WC_Product_Tabs_Settin
 	 * @version 1.5.0
 	 * @since   1.4.0
 	 *
-	 * @todo    [maybe] (dev) `alg_wc_product_tabs_variations_tabs_content`: better default value?
-	 * @todo    [maybe] (desc) better section desc?
+	 * @todo    (dev) `alg_wc_product_tabs_variations_tabs_content`: better default value?
+	 * @todo    (desc) better section desc?
 	 */
 	function get_settings() {
 		$settings = array(

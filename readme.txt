@@ -1,9 +1,9 @@
 === Additional Custom Product Tabs for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, product tabs, product, tab, tabs, customize, custom, woo, commerce
 Requires at least: 4.4
 Tested up to: 6.4
-Stable tag: 1.5.6
+Stable tag: 1.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Manage product tabs in WooCommerce. Beautifully.
 
 == Description ==
 
-**Additional Custom Product Tabs for WooCommerce** plugin lets you:
+**Product Tabs for WooCommerce** plugin lets you:
 
 * Customize WooCommerce **standard product tabs**.
 * Add **custom product tabs** globally for all products, or on per product basis.
@@ -19,7 +19,7 @@ Manage product tabs in WooCommerce. Beautifully.
 
 ### &#9989; Standard WooCommerce Product Tabs ###
 
-For standard WooCommerce product tabs (i.e. "Description", "Additional information" and "Reviews") you can:
+For standard WooCommerce product tabs (i.e., "Description", "Additional information" and "Reviews") you can:
 
 * **Remove** tab completely for all products.
 * Change tab's **position**.
@@ -30,15 +30,15 @@ For standard WooCommerce product tabs (i.e. "Description", "Additional informati
 For each custom product tab you can set:
 
 * Tab's **title**.
-* Tab's **ID** (i.e. link).
+* Tab's **ID** (i.e., link).
 * Tab's **position**.
 * Tab's **content**.
 
-For each global (i.e. all products) product tab you can also set **products/categories to show/hide** it for.
+For each global (i.e., all products) product tab you can also set **products/categories to show/hide** it for.
 
 ### &#9989; Shortcodes ###
 
-In product tab's title and content you can use plugin's shortcodes: `[alg_wc_pt_product_meta]` and `[alg_wc_pt_product_function]`. This is especially useful in global (i.e. all products) tabs. For example, you can output some custom field value in your custom tabs for all products at once:
+In product tab's title and content you can use plugin's shortcodes: `[alg_wc_pt_product_meta]` and `[alg_wc_pt_product_function]`. This is especially useful in global (i.e., all products) tabs. For example, you can output some custom field value in your custom tabs for all products at once:
 
 `
 [alg_wc_pt_product_meta key="my_custom_field"]
@@ -59,6 +59,10 @@ While free version allows you to add one global custom tab and one "per product"
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/).
 
+### &#8505; More ###
+
+* The plugin is **"High-Performance Order Storage (HPOS)"** compatible.
+
 == Installation ==
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
@@ -72,8 +76,14 @@ While free version allows you to add one global custom tab and one "per product"
 
 == Changelog ==
 
+= 1.6.0 - 06/01/2024 =
+* Dev – "High-Performance Order Storage (HPOS)" compatibility.
+* Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
+* Dev - Code refactoring.
+* WC tested up to: 8.4.
+
 = 1.5.6 - 20/11/2023 =
-* Update plugin title.
+* Plugin name updated.
 
 = 1.5.5 - 20/11/2023 =
 * WC tested up to: 8.3.
@@ -82,7 +92,7 @@ While free version allows you to add one global custom tab and one "per product"
 = 1.5.4 - 25/09/2023 =
 * WC tested up to: 8.1.
 * Tested up to: 6.3.
-* Update plugin icon, banner.
+* Plugin icon, banner updated.
 
 = 1.5.3 - 18/06/2023 =
 * WC tested up to: 7.8.
@@ -118,7 +128,7 @@ While free version allows you to add one global custom tab and one "per product"
 * Dev - Custom Tabs: All Products - "Enable section" option added (defaults to `yes`).
 * Dev - Shortcodes - `[alg_wc_pt_product_function]` shortcode added.
 * Dev - Shortcodes - `[alg_wc_pt_product_meta]` shortcode added.
-* Dev - Shortcodes - `[alg_wc_pt_translate]` shortcode alias added (i.e. same as `[alg_wc_cpt_translate]`).
+* Dev - Shortcodes - `[alg_wc_pt_translate]` shortcode alias added (i.e., same as `[alg_wc_cpt_translate]`).
 * Dev - Localization - `load_plugin_textdomain()` moved to the `init` action.
 * Dev - JS file minified.
 * Dev - Code refactoring.
@@ -129,7 +139,7 @@ While free version allows you to add one global custom tab and one "per product"
 = 1.3.0 - 03/01/2020 =
 * Dev - Tab "ID" options added.
 * Dev - Triggering tab open with JavaScript now.
-* Dev - Multi-language (i.e. WPML/Polylang) shortcode `[alg_wc_cpt_translate]` added.
+* Dev - Multi-language (i.e., WPML/Polylang) shortcode `[alg_wc_cpt_translate]` added.
 * Dev - Code refactoring.
 * Dev - Admin settings restyled and descriptions updated.
 * WC tested up to: 3.8.
