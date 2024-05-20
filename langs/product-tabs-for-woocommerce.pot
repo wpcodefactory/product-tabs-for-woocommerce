@@ -1,5 +1,37 @@
-#: includes/class-alg-wc-product-tabs.php:152
-msgid "Settings"
+# Copyright (C) 2024 WPFactory
+# This file is distributed under the same license as the Additional Custom Product Tabs for WooCommerce Pro plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: product-tabs-for-woocommerce 1.6.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-tabs-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-05-20T18:25:09+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: product-tabs-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+msgid "Additional Custom Product Tabs for WooCommerce Pro"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Manage product tabs in WooCommerce. Beautifully."
+msgstr ""
+
+#. Author of the plugin
+msgid "WPFactory"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wpfactory.com"
 msgstr ""
 
 #: includes/class-alg-wc-product-tabs.php:155
@@ -52,9 +84,7 @@ msgid "Custom Tabs: Per Product"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-general.php:71
-msgid ""
-"Sets options for custom tabs on per product basis (when enabled, will add "
-"meta boxes on each product's admin edit page)."
+msgid "Sets options for custom tabs on per product basis (when enabled, will add meta boxes on each product's admin edit page)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-general.php:79
@@ -71,9 +101,7 @@ msgid "Custom Product Tabs: All Products"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-global.php:121
-msgid ""
-"This section lets you add custom product tabs for all products globally. You "
-"can use shortcodes in tab's content."
+msgid "This section lets you add custom product tabs for all products globally. You can use shortcodes in tab's content."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-global.php:125
@@ -215,9 +243,7 @@ msgid "Add SKU to products lists"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-global.php:246
-msgid ""
-"Enable this, if you want SKUs to be added to the products lists in "
-"\"Products to hide this tab\" and \"Products to show this tab\" options."
+msgid "Enable this, if you want SKUs to be added to the products lists in \"Products to hide this tab\" and \"Products to show this tab\" options."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-local.php:40
@@ -225,9 +251,7 @@ msgid "Custom Product Tabs: Per Product"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-local.php:42
-msgid ""
-"This section lets you set options for custom tabs on per product basis. When "
-"enabled, will add metaboxes on each product's admin edit page."
+msgid "This section lets you set options for custom tabs on per product basis. When enabled, will add metaboxes on each product's admin edit page."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-local.php:46
@@ -255,9 +279,7 @@ msgid "Total number of custom tabs"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:108
-#, php-format
-msgid ""
-"Get <a href=\"%s\">Product Tabs for WooCommerce Pro</a> to change value."
+msgid "Get <a href=\"%s\">Product Tabs for WooCommerce Pro</a> to change value."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:143
@@ -265,29 +287,22 @@ msgid "Custom Product Tab"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:82
-#, php-format
 msgid "You can use shortcodes in \"%s\" option(s)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:83
-#, php-format
 msgid "You can use shortcodes in \"%s\" and \"%s\" option(s)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:85
-#, php-format
 msgid "There are two main shortcodes in plugin: %s and %s."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:87
-#, php-format
-msgid ""
-"%s shortcode will display <a href=\"%s\" target=\"_blank\">product's "
-"function</a> result, for example: %s"
+msgid "%s shortcode will display <a href=\"%s\" target=\"_blank\">product's function</a> result, for example: %s"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:90
-#, php-format
 msgid "%s shortcode will display product's meta value, for example: %s"
 msgstr ""
 
@@ -342,9 +357,7 @@ msgid "Variations Product Tabs Options"
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-variations.php:45
-msgid ""
-"This section lets you automatically add variations tabs to all variable "
-"products (one tab for each variation)."
+msgid "This section lets you automatically add variations tabs to all variable products (one tab for each variation)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-product-tabs-settings-variations.php:49
