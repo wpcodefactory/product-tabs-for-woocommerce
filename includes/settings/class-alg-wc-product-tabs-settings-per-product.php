@@ -105,7 +105,15 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 		$html .= '<input type="number" min="0" id="' . $option_name . '" name="' . $option_name . '" value="' . $total_custom_tabs . '"' . apply_filters( 'alg_wc_product_tabs_settings', ' readonly' ) . '>';
 		$html .= '</td>';
 		$html .= '<td>';
-		$html .= apply_filters( 'alg_wc_product_tabs_settings', sprintf( __( 'Get <a href="%s">Product Tabs for WooCommerce Pro</a> to change value.', 'product-tabs-for-woocommerce' ), 'https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/' ), 'message' );
+		$html .= apply_filters(
+			'alg_wc_product_tabs_settings',
+			sprintf(
+				/* Translators: %s: Plugin URL. */
+				__( 'Get <a href="%s">Product Tabs for WooCommerce Pro</a> to change value.', 'product-tabs-for-woocommerce' ),
+				'https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/'
+			),
+			'message'
+		);
 		$html .= '</td>';
 		$html .= '</tr>';
 		$html .= '</table>';

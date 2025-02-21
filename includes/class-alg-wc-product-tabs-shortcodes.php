@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Shortcodes Class
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.4.0
  *
  * @author  Algoritmika Ltd.
@@ -102,8 +102,10 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	/**
 	 * translate.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.0
 	 * @since   1.3.0
+	 *
+	 * @todo    (v1.7.0) `do_shortcode`: make it optional?
 	 */
 	function translate( $atts, $content = '' ) {
 		// E.g.: `[alg_wc_pt_translate lang="EN,DE" lang_text="Text for EN & DE" not_lang_text="Text for other languages"]`
@@ -115,7 +117,7 @@ class Alg_WC_Product_Tabs_Shortcodes {
 		return (
 			( ! empty( $atts['lang'] )     && ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ) ||
 			( ! empty( $atts['not_lang'] ) &&     defined( 'ICL_LANGUAGE_CODE' ) &&   in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) ) ) )
-		) ? '' : $content;
+		) ? '' : do_shortcode( $content );
 	}
 
 }

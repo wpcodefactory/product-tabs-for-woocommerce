@@ -3,13 +3,15 @@
 Plugin Name: Additional Custom Product Tabs for WooCommerce
 Plugin URI: https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/
 Description: Manage product tabs in WooCommerce. Beautifully.
-Version: 1.6.2
+Version: 1.7.0
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: product-tabs-for-woocommerce
 Domain Path: /langs
-WC tested up to: 9.1
+WC tested up to: 9.6
 Requires Plugins: woocommerce
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -23,19 +25,29 @@ if ( 'product-tabs-for-woocommerce.php' === basename( __FILE__ ) ) {
 	 */
 	$plugin = 'product-tabs-for-woocommerce-pro/product-tabs-for-woocommerce-pro.php';
 	if (
-		in_array( $plugin, (array) get_option( 'active_plugins', array() ), true ) ||
-		( is_multisite() && array_key_exists( $plugin, (array) get_site_option( 'active_sitewide_plugins', array() ) ) )
+		in_array(
+			$plugin,
+			(array) get_option( 'active_plugins', array() ),
+			true
+		) ||
+		(
+			is_multisite() &&
+			array_key_exists(
+				$plugin,
+				(array) get_site_option( 'active_sitewide_plugins', array() )
+			)
+		)
 	) {
 		defined( 'ALG_WC_PRODUCT_TABS_FILE_FREE' ) || define( 'ALG_WC_PRODUCT_TABS_FILE_FREE', __FILE__ );
 		return;
 	}
 }
 
-defined( 'ALG_WC_PRODUCT_TABS_VERSION' ) || define( 'ALG_WC_PRODUCT_TABS_VERSION', '1.6.2' );
+defined( 'ALG_WC_PRODUCT_TABS_VERSION' ) || define( 'ALG_WC_PRODUCT_TABS_VERSION', '1.7.0' );
 
 defined( 'ALG_WC_PRODUCT_TABS_FILE' ) || define( 'ALG_WC_PRODUCT_TABS_FILE', __FILE__ );
 
-require_once( 'includes/class-alg-wc-product-tabs.php' );
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-alg-wc-product-tabs.php';
 
 if ( ! function_exists( 'alg_wc_product_tabs' ) ) {
 	/**

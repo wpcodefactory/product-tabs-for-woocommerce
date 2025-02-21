@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Settings
  *
- * @version 1.5.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -17,22 +17,25 @@ class Alg_WC_Settings_Product_Tabs extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.5.0
+	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (desc) better descriptions for all settings section (check plugin homepage)
 	 */
 	function __construct() {
+
 		$this->id    = 'alg_product_tabs';
 		$this->label = __( 'Product Tabs', 'product-tabs-for-woocommerce' );
 		parent::__construct();
+
 		// Sections
-		require_once( 'class-alg-wc-product-tabs-settings-section.php' );
-		require_once( 'class-alg-wc-product-tabs-settings-general.php' );
-		require_once( 'class-alg-wc-product-tabs-settings-standard.php' );
-		require_once( 'class-alg-wc-product-tabs-settings-global.php' );
-		require_once( 'class-alg-wc-product-tabs-settings-local.php' );
-		require_once( 'class-alg-wc-product-tabs-settings-variations.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-section.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-general.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-standard.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-global.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-local.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-settings-variations.php';
+
 	}
 
 	/**
@@ -86,12 +89,13 @@ class Alg_WC_Settings_Product_Tabs extends WC_Settings_Page {
 	/**
 	 * admin_notice_settings_reset.
 	 *
-	 * @version 1.2.0
+	 * @version 1.7.0
 	 * @since   1.2.0
 	 */
 	function admin_notice_settings_reset() {
 		echo '<div class="notice notice-warning is-dismissible"><p><strong>' .
-			__( 'Your settings have been reset.', 'product-tabs-for-woocommerce' ) . '</strong></p></div>';
+			esc_html__( 'Your settings have been reset.', 'product-tabs-for-woocommerce' ) .
+		'</strong></p></div>';
 	}
 
 	/**

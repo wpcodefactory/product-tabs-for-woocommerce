@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Section Settings
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.2.0
  *
  * @author  Algoritmika Ltd.
@@ -55,7 +55,7 @@ class Alg_WC_Product_Tabs_Settings_Section {
 	/**
 	 * get_shortcodes_notes_section.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.0
 	 * @since   1.4.0
 	 *
 	 * @todo    (desc) better desc!
@@ -79,17 +79,41 @@ class Alg_WC_Product_Tabs_Settings_Section {
 
 		$desc = array(
 			( $desc_title_options_only ?
-				 sprintf( __( 'You can use shortcodes in "%s" option(s).', 'product-tabs-for-woocommerce' ),          __( 'Title', 'product-tabs-for-woocommerce' ) ) :
-				 sprintf( __( 'You can use shortcodes in "%s" and "%s" option(s).', 'product-tabs-for-woocommerce' ), __( 'Title', 'product-tabs-for-woocommerce' ), __( 'Content', 'product-tabs-for-woocommerce' ) )
+				sprintf(
+					/* Translators: %s: Option name. */
+					__( 'You can use shortcodes in "%s" option(s).', 'product-tabs-for-woocommerce' ),
+					__( 'Title', 'product-tabs-for-woocommerce' )
+				) :
+				sprintf(
+					/* Translators: %1$s: Option name, %2$s: Option name. */
+					__( 'You can use shortcodes in "%1$s" and "%2$s" option(s).', 'product-tabs-for-woocommerce' ),
+					__( 'Title', 'product-tabs-for-woocommerce' ),
+					__( 'Content', 'product-tabs-for-woocommerce' )
+				)
 			),
-			sprintf( __( 'There are two main shortcodes in plugin: %s and %s.', 'product-tabs-for-woocommerce' ),
-				'<code>[alg_wc_pt_product_function]</code>', '<code>[alg_wc_pt_product_meta]</code>' ),
-			sprintf( __( '%s shortcode will display <a href="%s" target="_blank">product\'s function</a> result, for example: %s', 'product-tabs-for-woocommerce' ),
-				'<code>[alg_wc_pt_product_function]</code>', 'https://woocommerce.github.io/code-reference/classes/WC-Product.html',
-				'<pre style="background-color:white;padding:10px;">' . implode( PHP_EOL, $examples['alg_wc_pt_product_function'] ) . '</pre>' ),
-			sprintf( __( '%s shortcode will display product\'s meta value, for example: %s', 'product-tabs-for-woocommerce' ),
+			sprintf(
+				/* Translators: %1$s: Shortcode name, %2$s: Shortcode name. */
+				__( 'There are two main shortcodes in plugin: %1$s and %2$s.', 'product-tabs-for-woocommerce' ),
+				'<code>[alg_wc_pt_product_function]</code>',
+				'<code>[alg_wc_pt_product_meta]</code>'
+			),
+			sprintf(
+				/* Translators: %1$s: Shortcode name, %2$s: Documentation URL, %3$s: Shortcode examples. */
+				__( '%1$s shortcode will display <a href="%2$s" target="_blank">product\'s function</a> result, for example: %3$s', 'product-tabs-for-woocommerce' ),
+				'<code>[alg_wc_pt_product_function]</code>',
+				'https://woocommerce.github.io/code-reference/classes/WC-Product.html',
+				'<pre style="background-color:white;padding:10px;">' .
+					implode( PHP_EOL, $examples['alg_wc_pt_product_function'] ) .
+				'</pre>'
+			),
+			sprintf(
+				/* Translators: %1$s: Shortcode name, %2$s: Shortcode example. */
+				__( '%1$s shortcode will display product\'s meta value, for example: %2$s', 'product-tabs-for-woocommerce' ),
 				'<code>[alg_wc_pt_product_meta]</code>',
-				'<pre style="background-color:white;padding:10px;">' . implode( PHP_EOL, $examples['alg_wc_pt_product_meta'] ) . '</pre>' ),
+				'<pre style="background-color:white;padding:10px;">' .
+					implode( PHP_EOL, $examples['alg_wc_pt_product_meta'] ) .
+				'</pre>'
+			),
 		);
 
 		$icon = '<span class="dashicons dashicons-info"></span> ';

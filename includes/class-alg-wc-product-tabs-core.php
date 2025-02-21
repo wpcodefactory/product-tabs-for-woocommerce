@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Core Class
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -33,7 +33,7 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) content: optional `wp_autop()`?
@@ -44,15 +44,20 @@ class Alg_WC_Product_Tabs_Core {
 	 */
 	function __construct() {
 		if ( 'yes' === get_option( 'alg_woocommerce_product_tabs_enabled', 'yes' ) ) {
-			// Properties
+
+			// Tab keys
 			$this->tab_keys = array();
+
 			// Shortcodes
-			$this->shortcodes = require_once( 'class-alg-wc-product-tabs-shortcodes.php' );
+			$this->shortcodes = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-product-tabs-shortcodes.php';
+
 			// Hooks
 			add_filter( 'woocommerce_product_tabs', array( $this, 'get_product_tabs' ), 98 );
 			add_action( 'wp_enqueue_scripts',       array( $this, 'enqueue_scripts' ) );
+
 			// Per product
-			require_once( 'settings/class-alg-wc-product-tabs-settings-per-product.php' );
+			require_once plugin_dir_path( __FILE__ ) . 'settings/class-alg-wc-product-tabs-settings-per-product.php';
+
 		}
 		do_action( 'alg_wc_product_tabs_core_loaded', $this );
 	}

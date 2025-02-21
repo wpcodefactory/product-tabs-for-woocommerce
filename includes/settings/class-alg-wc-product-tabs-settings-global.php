@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Global Section Settings
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -83,18 +83,22 @@ class Alg_WC_Product_Tabs_Settings_Global extends Alg_WC_Product_Tabs_Settings_S
 	/**
 	 * get_product_terms.
 	 *
-	 * @version 1.2.0
+	 * @version 1.7.0
 	 * @since   1.2.0
 	 */
 	function get_product_terms( $taxonomy ) {
-		$product_terms  = array();
-		$_product_terms = get_terms( $taxonomy, 'orderby=name&hide_empty=0' );
-		if ( ! empty( $_product_terms ) && ! is_wp_error( $_product_terms ) ){
-			foreach ( $_product_terms as $_product_term ) {
-				$product_terms[ $_product_term->term_id ] = $_product_term->name;
-			}
+		$product_terms = get_terms( array(
+			'taxonomy'   => $taxonomy,
+			'orderby'    => 'name',
+			'hide_empty' => false,
+		) );
+		if (
+			! empty( $product_terms ) &&
+			! is_wp_error( $product_terms )
+		) {
+			return wp_list_pluck( $product_terms, 'name', 'term_id' );
 		}
-		return $product_terms;
+		return array();
 	}
 
 	/**
