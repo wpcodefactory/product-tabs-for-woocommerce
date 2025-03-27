@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Shortcodes Class
  *
- * @version 1.7.0
+ * @version 1.7.1
  * @since   1.4.0
  *
  * @author  Algoritmika Ltd.
@@ -51,7 +51,7 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	/**
 	 * output.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.1
 	 * @since   1.4.0
 	 *
 	 * @todo    (feature) optional formatting, e.g., `wc_price()` (e.g., `$atts['format_func']` or `$atts['output_func']`)
@@ -60,9 +60,13 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	 */
 	function output( $content, $atts ) {
 		if ( '' === $content || false === $content ) {
-			return ( isset( $atts['on_empty'] ) ? $atts['on_empty'] : '' );
+			return ( isset( $atts['on_empty'] ) ? wp_kses_post( $atts['on_empty'] ) : '' );
 		} else {
-			return ( isset( $atts['before'] ) ? $atts['before'] : '' ) . $content . ( isset( $atts['after'] ) ? $atts['after'] : '' );
+			return (
+				( isset( $atts['before'] ) ? wp_kses_post( $atts['before'] ) : '' ) .
+				$content .
+				( isset( $atts['after'] )  ? wp_kses_post( $atts['after'] )  : '' )
+			);
 		}
 	}
 
