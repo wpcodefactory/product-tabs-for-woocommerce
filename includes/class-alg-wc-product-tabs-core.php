@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Core Class
  *
- * @version 1.7.0
+ * @version 1.7.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -36,7 +36,6 @@ class Alg_WC_Product_Tabs_Core {
 	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
-	 * @todo    (feature) content: optional `wp_autop()`?
 	 * @todo    (feature) content: `wp_oembed_get()`?
 	 * @todo    (feature) content/title: optional `do_shortcode`?
 	 * @todo    (feature) customizable tab keys?
@@ -75,8 +74,15 @@ class Alg_WC_Product_Tabs_Core {
 	function get_current_product_id() {
 		global $product;
 		if ( $product && is_a( $product, 'WC_Product' ) ) {
-			return ( version_compare( get_option( 'woocommerce_version', null ), '3.0.0', '<' ) ?
-				$product->id : ( $product->is_type( 'variation' ) ? $product->get_parent_id() : $product->get_id() ) );
+			return (
+				version_compare( get_option( 'woocommerce_version', null ), '3.0.0', '<' ) ?
+				$product->id :
+				(
+					$product->is_type( 'variation' ) ?
+					$product->get_parent_id() :
+					$product->get_id()
+				)
+			);
 		} else {
 			return get_the_ID();
 		}
@@ -89,7 +95,11 @@ class Alg_WC_Product_Tabs_Core {
 	 * @since   1.3.0
 	 */
 	function get_custom_tab_ids() {
-		return array_merge( array_keys( $this->get_tabs_global() ), array_keys( $this->get_tabs_local() ), array_keys( $this->get_tabs_variations() ) );
+		return array_merge(
+			array_keys( $this->get_tabs_global() ),
+			array_keys( $this->get_tabs_local() ),
+			array_keys( $this->get_tabs_variations() )
+		);
 	}
 
 	/**
@@ -99,12 +109,24 @@ class Alg_WC_Product_Tabs_Core {
 	 * @since   1.3.0
 	 */
 	function enqueue_scripts() {
-		if ( function_exists( 'is_product' ) && is_product() && ( $custom_tab_ids = $this->get_custom_tab_ids() ) ) {
+		if (
+			function_exists( 'is_product' ) &&
+			is_product() &&
+			( $custom_tab_ids = $this->get_custom_tab_ids() )
+		) {
 			$min_suffix = ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ? '' : '.min' );
-			wp_enqueue_script( 'class-alg-wc-product-tabs-js',
-				alg_wc_product_tabs()->plugin_url() . '/includes/js/class-alg-wc-product-tabs' . $min_suffix . '.js', array( 'jquery' ), alg_wc_product_tabs()->version, true );
-			wp_localize_script( 'class-alg-wc-product-tabs-js',
-				'alg_wc_custom_tabs', array( 'ids' => $custom_tab_ids ) );
+			wp_enqueue_script(
+				'class-alg-wc-product-tabs-js',
+				alg_wc_product_tabs()->plugin_url() . '/includes/js/class-alg-wc-product-tabs' . $min_suffix . '.js',
+				array( 'jquery' ),
+				alg_wc_product_tabs()->version,
+				true
+			);
+			wp_localize_script(
+				'class-alg-wc-product-tabs-js',
+				'alg_wc_custom_tabs',
+				array( 'ids' => $custom_tab_ids )
+			);
 		}
 	}
 
@@ -115,7 +137,10 @@ class Alg_WC_Product_Tabs_Core {
 	 * @since   1.0.0
 	 */
 	function get_tabs_standard( $tabs ) {
-		if ( 'yes' !== get_option( 'alg_wc_product_tabs_standard_tabs_enabled', 'yes' ) || ! ( $product_id = $this->get_current_product_id() ) ) {
+		if (
+			'yes' !== get_option( 'alg_wc_product_tabs_standard_tabs_enabled', 'yes' ) ||
+			! ( $product_id = $this->get_current_product_id() )
+		) {
 			return $tabs;
 		}
 		$_tabs = array(
@@ -150,7 +175,10 @@ class Alg_WC_Product_Tabs_Core {
 	 * @todo    (dev) pass `$key` via `$tabs` array (similar to `alg_wc_product_tabs_product_id`) (same in `get_tabs_local()`)?
 	 */
 	function get_tabs_global( $tabs = array() ) {
-		if ( 'yes' !== get_option( 'alg_wc_product_tabs_global_tabs_enabled', 'yes' ) || ! ( $product_id = $this->get_current_product_id() ) ) {
+		if (
+			'yes' !== get_option( 'alg_wc_product_tabs_global_tabs_enabled', 'yes' ) ||
+			! ( $product_id = $this->get_current_product_id() )
+		) {
 			return $tabs;
 		}
 		for ( $i = 1; $i <= apply_filters( 'alg_wc_product_tabs_global', 1 ); $i++ ) {
@@ -187,7 +215,14 @@ class Alg_WC_Product_Tabs_Core {
 		switch( $option_type ) {
 			case 'text_skus':
 				$option_value = get_option( $option . '_sku', $default );
-				return ( empty( $option_value ) ? array() : array_map( 'wc_get_product_id_by_sku', array_map( 'trim', explode( ',', $option_value ) ) ) );
+				return (
+					empty( $option_value ) ?
+					array() :
+					array_map(
+						'wc_get_product_id_by_sku',
+						array_map( 'trim', explode( ',', $option_value ) )
+					)
+				);
 			case 'text_ids':
 				return array_map( 'trim', explode( ',', get_option( $option . '_id', $default ) ) );
 			default: // 'multiselect'
@@ -243,13 +278,22 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * output_tab_global.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.2
 	 * @since   1.0.0
 	 */
 	function output_tab_global( $key, $tab ) {
 		$key        = ( $this->tab_keys[ $key ] ?? $key );
-		$product_id = ( ! empty( $tab['alg_wc_product_tabs_product_id'] ) ? $tab['alg_wc_product_tabs_product_id'] : false );
-		echo $this->do_shortcode( get_option( 'alg_custom_product_tabs_content_' . $key, '' ), $product_id );
+		$product_id = (
+			! empty( $tab['alg_wc_product_tabs_product_id'] ) ?
+			$tab['alg_wc_product_tabs_product_id'] :
+			false
+		);
+		$content    = $this->do_shortcode(
+			get_option( 'alg_custom_product_tabs_content_' . $key, '' ),
+			$product_id
+		);
+		$content    = $this->format_content( $content );
+		echo $content;
 	}
 
 	/**
@@ -259,7 +303,10 @@ class Alg_WC_Product_Tabs_Core {
 	 * @since   1.0.0
 	 */
 	function get_tabs_local( $tabs = array() ) {
-		if ( 'yes' !== get_option( 'alg_custom_product_tabs_local_enabled', 'yes' ) || ! ( $product_id = $this->get_current_product_id() ) ) {
+		if (
+			'yes' !== get_option( 'alg_custom_product_tabs_local_enabled', 'yes' ) ||
+			! ( $product_id = $this->get_current_product_id() )
+		) {
 			return $tabs;
 		}
 		if ( ! ( $total = apply_filters( 'alg_wc_product_tabs_local', '', $product_id ) ) ) {
@@ -292,15 +339,24 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * output_tab_local.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.2
 	 * @since   1.0.0
 	 *
 	 * @todo    (dev) `get_the_ID()`?
 	 */
 	function output_tab_local( $key, $tab ) {
 		$key        = ( $this->tab_keys[ $key ] ?? $key );
-		$product_id = ( ! empty( $tab['alg_wc_product_tabs_product_id'] ) ? $tab['alg_wc_product_tabs_product_id'] : false );
-		echo $this->do_shortcode( get_post_meta( get_the_ID(), '_' . 'alg_custom_product_tabs_content_' . $key, true ), $product_id );
+		$product_id = (
+			! empty( $tab['alg_wc_product_tabs_product_id'] ) ?
+			$tab['alg_wc_product_tabs_product_id'] :
+			false
+		);
+		$content    = $this->do_shortcode(
+			get_post_meta( get_the_ID(), '_' . 'alg_custom_product_tabs_content_' . $key, true ),
+			$product_id
+		);
+		$content    = $this->format_content( $content );
+		echo $content;
 	}
 
 	/**
@@ -310,7 +366,10 @@ class Alg_WC_Product_Tabs_Core {
 	 * @since   1.4.0
 	 */
 	function get_tabs_variations( $tabs = array() ) {
-		if ( 'yes' !== get_option( 'alg_wc_product_tabs_variations_tabs_enabled', 'no' ) || ! ( $product_id = $this->get_current_product_id() ) ) {
+		if (
+			'yes' !== get_option( 'alg_wc_product_tabs_variations_tabs_enabled', 'no' ) ||
+			! ( $product_id = $this->get_current_product_id() )
+		) {
 			return $tabs;
 		}
 		$product = wc_get_product( $product_id );
@@ -333,17 +392,38 @@ class Alg_WC_Product_Tabs_Core {
 	/**
 	 * output_tab_variation.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.2
 	 * @since   1.4.0
 	 */
 	function output_tab_variation( $key, $product_tab ) {
 		if ( ! empty( $product_tab['alg_wc_product_tabs_variation_id'] ) ) {
-			$content = get_option( 'alg_wc_product_tabs_variations_tabs_content', '<h2>[alg_wc_pt_product_function name="get_name"]</h2>' . PHP_EOL .
+			$content = get_option( 'alg_wc_product_tabs_variations_tabs_content',
+				'<h2>[alg_wc_pt_product_function name="get_name"]</h2>' . PHP_EOL .
 				'<p>Price: [alg_wc_pt_product_function name="get_price_html"]</p>' . PHP_EOL .
 				'<p>[alg_wc_pt_product_function name="get_description"]</p>' . PHP_EOL .
-				'<p><a class="button" href=\'[alg_wc_pt_product_function name="add_to_cart_url"]\'>Add to cart</a></p>' );
-			echo $this->do_shortcode( $content, $product_tab['alg_wc_product_tabs_variation_id'] );
+				'<p><a class="button" href=\'[alg_wc_pt_product_function name="add_to_cart_url"]\'>Add to cart</a></p>'
+			);
+			$content = $this->do_shortcode(
+				$content,
+				$product_tab['alg_wc_product_tabs_variation_id']
+			);
+			$content = $this->format_content( $content );
+			echo $content;
 		}
+	}
+
+	/**
+	 * format_content.
+	 *
+	 * @version 1.7.2
+	 * @since   1.7.2
+	 */
+	function format_content( $content ) {
+		return (
+			'yes' === get_option( 'alg_wc_product_tabs_wpautop', 'no' ) ?
+			wpautop( $content ) :
+			$content
+		);
 	}
 
 	/**

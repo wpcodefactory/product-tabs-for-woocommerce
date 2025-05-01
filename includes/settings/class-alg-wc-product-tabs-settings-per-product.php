@@ -51,14 +51,22 @@ class Alg_WC_Product_Tabs_Settings_Per_Product {
 			foreach ( $options as $option ) {
 				$option_id = 'alg_custom_product_tabs_' . $option . '_local_' . $i;
 				if ( isset( $_POST[ $option_id ] ) ) {
-					update_post_meta( $product_id, '_' . $option_id, wp_kses_post( trim( $_POST[ $option_id ] ) ) );
+					update_post_meta(
+						$product_id,
+						'_' . $option_id,
+						wp_kses_post( trim( $_POST[ $option_id ] ) )
+					);
 				}
 			}
 		}
 
 		// Save: total custom tabs number
 		$option_id         = 'alg_custom_product_tabs_local_total_number';
-		$total_custom_tabs = ( isset( $_POST[ $option_id ] ) ? intval( $_POST[ $option_id ] ) : $default_total_custom_tabs );
+		$total_custom_tabs = (
+			isset( $_POST[ $option_id ] ) ?
+			intval( $_POST[ $option_id ] ) :
+			$default_total_custom_tabs
+		);
 		update_post_meta( $product_id, '_' . $option_id, $total_custom_tabs );
 	}
 

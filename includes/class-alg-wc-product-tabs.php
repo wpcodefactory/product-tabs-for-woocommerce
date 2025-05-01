@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Main Class
  *
- * @version 1.7.0
+ * @version 1.7.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -44,8 +44,9 @@ final class Alg_WC_Product_Tabs {
 	 * @return Alg_WC_Product_Tabs - Main instance
 	 */
 	public static function instance() {
-		if ( is_null( self::$_instance ) )
+		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
+		}
 		return self::$_instance;
 	}
 
@@ -137,7 +138,7 @@ final class Alg_WC_Product_Tabs {
 	/**
 	 * admin.
 	 *
-	 * @version 1.7.0
+	 * @version 1.7.2
 	 * @since   1.2.0
 	 */
 	function admin() {
@@ -149,7 +150,7 @@ final class Alg_WC_Product_Tabs {
 		$this->add_cross_selling_library();
 
 		// WC Settings tab as WPFactory submenu item
-		$this->move_wc_settings_tab_to_wpfactory_menu();
+		add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
 
 		// Settings
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
