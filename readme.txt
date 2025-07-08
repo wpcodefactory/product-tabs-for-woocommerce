@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, aegkr
 Tags: woocommerce, product tabs, product, tab, tabs
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,13 @@ While free version allows you to add one global custom tab and one "per product"
 2. Setting product tabs on per product basis.
 
 == Changelog ==
+
+= 1.7.3 - 08/07/2025 =
+* Dev - WPFactory Admin Menu - Library updated.
+* Dev - WPFactory Admin Menu - Icon added.
+* Dev - WPFactory Recommendations - Moved to the `init` hook.
+* Dev - WPFactory Key Manager - Moved to the `init` hook.
+* WC tested up to: 9.9.
 
 = 1.7.2 - 01/05/2025 =
 * Fix - Translation domain loading triggered too early.

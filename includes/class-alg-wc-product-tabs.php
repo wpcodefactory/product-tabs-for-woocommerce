@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Main Class
  *
- * @version 1.7.2
+ * @version 1.7.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -110,7 +110,7 @@ final class Alg_WC_Product_Tabs {
 	 * @version 1.6.0
 	 * @since   1.6.0
 	 *
-	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 * @see     https://developer.woocommerce.com/docs/features/high-performance-order-storage/recipe-book/
 	 */
 	function wc_declare_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
@@ -120,7 +120,11 @@ final class Alg_WC_Product_Tabs {
 				array( ALG_WC_PRODUCT_TABS_FILE )
 			);
 			foreach ( $files as $file ) {
-				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+					'custom_order_tables',
+					$file,
+					true
+				);
 			}
 		}
 	}
@@ -138,16 +142,19 @@ final class Alg_WC_Product_Tabs {
 	/**
 	 * admin.
 	 *
-	 * @version 1.7.2
+	 * @version 1.7.3
 	 * @since   1.2.0
 	 */
 	function admin() {
 
 		// Action links
-		add_filter( 'plugin_action_links_' . plugin_basename( ALG_WC_PRODUCT_TABS_FILE ), array( $this, 'action_links' ) );
+		add_filter(
+			'plugin_action_links_' . plugin_basename( ALG_WC_PRODUCT_TABS_FILE ),
+			array( $this, 'action_links' )
+		);
 
 		// "Recommendations" page
-		$this->add_cross_selling_library();
+		add_action( 'init', array( $this, 'add_cross_selling_library' ) );
 
 		// WC Settings tab as WPFactory submenu item
 		add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
@@ -208,7 +215,7 @@ final class Alg_WC_Product_Tabs {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_menu.
 	 *
-	 * @version 1.7.0
+	 * @version 1.7.3
 	 * @since   1.7.0
 	 */
 	function move_wc_settings_tab_to_wpfactory_menu() {
@@ -226,7 +233,11 @@ final class Alg_WC_Product_Tabs {
 		$wpfactory_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
 			'wc_settings_tab_id' => 'alg_product_tabs',
 			'menu_title'         => __( 'Product Tabs', 'product-tabs-for-woocommerce' ),
-			'page_title'         => __( 'Product Tabs', 'product-tabs-for-woocommerce' ),
+			'page_title'         => __( 'Additional Custom Product Tabs for WooCommerce', 'product-tabs-for-woocommerce' ),
+			'plugin_icon'        => array(
+				'get_url_method'    => 'wporg_plugins_api',
+				'wporg_plugin_slug' => 'product-tabs-for-woocommerce',
+			),
 		) );
 
 	}
