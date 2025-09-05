@@ -2,7 +2,7 @@
 /**
  * Product Tabs for WooCommerce - Shortcodes Class
  *
- * @version 1.7.1
+ * @version 1.7.4
  * @since   1.4.0
  *
  * @author  Algoritmika Ltd.
@@ -32,10 +32,10 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	 * @todo    (feature) add aliases, e.g., `[alg_wc_pt_product_price]`, `[alg_wc_pt_product_description]`, etc.?
 	 */
 	function __construct() {
-		add_shortcode( 'alg_wc_pt_product_function',     array( $this, 'product_function' ) );
-		add_shortcode( 'alg_wc_pt_product_meta',         array( $this, 'product_meta' ) );
-		add_shortcode( 'alg_wc_pt_translate',            array( $this, 'translate' ) );
-		add_shortcode( 'alg_wc_cpt_translate',           array( $this, 'translate' ) ); // deprecated
+		add_shortcode( 'alg_wc_pt_product_function', array( $this, 'product_function' ) );
+		add_shortcode( 'alg_wc_pt_product_meta',     array( $this, 'product_meta' ) );
+		add_shortcode( 'alg_wc_pt_translate',        array( $this, 'translate' ) );
+		add_shortcode( 'alg_wc_cpt_translate',       array( $this, 'translate' ) ); // deprecated
 	}
 
 	/**
@@ -45,7 +45,11 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	 * @since   1.4.0
 	 */
 	function get_product_id( $atts ) {
-		return ( ! empty( $atts['product_id'] ) ? $atts['product_id'] : ( ! empty( $this->product_id ) ? $this->product_id : false ) );
+		return (
+			! empty( $atts['product_id'] ) ?
+			$atts['product_id'] :
+			( ! empty( $this->product_id ) ? $this->product_id : false )
+		);
 	}
 
 	/**
@@ -77,7 +81,11 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	 * @since   1.4.0
 	 */
 	function product_function( $atts, $content = '' ) {
-		if ( isset( $atts['name'] ) && ( $product_id = $this->get_product_id( $atts ) ) && ( $product = wc_get_product( $product_id ) ) ) {
+		if (
+			isset( $atts['name'] ) &&
+			( $product_id = $this->get_product_id( $atts ) ) &&
+			( $product = wc_get_product( $product_id ) )
+		) {
 			$func = $atts['name'];
 			if ( isset( $atts['type'] ) && 'global' === $atts['type'] ) {
 				if ( function_exists( $func ) ) {
@@ -106,22 +114,60 @@ class Alg_WC_Product_Tabs_Shortcodes {
 	/**
 	 * translate.
 	 *
-	 * @version 1.7.0
+	 * @version 1.7.4
 	 * @since   1.3.0
 	 *
 	 * @todo    (v1.7.0) `do_shortcode`: make it optional?
 	 */
 	function translate( $atts, $content = '' ) {
+
 		// E.g.: `[alg_wc_pt_translate lang="EN,DE" lang_text="Text for EN & DE" not_lang_text="Text for other languages"]`
-		if ( isset( $atts['lang_text'] ) && isset( $atts['not_lang_text'] ) && ! empty( $atts['lang'] ) ) {
-			return ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ?
-				$atts['not_lang_text'] : $atts['lang_text'];
+		if (
+			isset( $atts['lang_text'] ) &&
+			isset( $atts['not_lang_text'] ) &&
+			! empty( $atts['lang'] )
+		) {
+			return (
+				(
+					! defined( 'ICL_LANGUAGE_CODE' ) ||
+					! in_array(
+						strtolower( ICL_LANGUAGE_CODE ),
+						array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) )
+					)
+				) ?
+				wp_kses_post( $atts['not_lang_text'] ) :
+				wp_kses_post( $atts['lang_text'] )
+			);
 		}
+
 		// E.g.: `[alg_wc_pt_translate lang="EN,DE"]Text for EN & DE[/alg_wc_pt_translate][alg_wc_pt_translate not_lang="EN,DE"]Text for other languages[/alg_wc_pt_translate]`
 		return (
-			( ! empty( $atts['lang'] )     && ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ) ||
-			( ! empty( $atts['not_lang'] ) &&     defined( 'ICL_LANGUAGE_CODE' ) &&   in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) ) ) )
-		) ? '' : do_shortcode( $content );
+			(
+				(
+					! empty( $atts['lang'] ) &&
+					(
+						! defined( 'ICL_LANGUAGE_CODE' ) ||
+						! in_array(
+							strtolower( ICL_LANGUAGE_CODE ),
+							array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) )
+						)
+					)
+				) ||
+				(
+					! empty( $atts['not_lang'] ) &&
+					(
+						defined( 'ICL_LANGUAGE_CODE' ) &&
+						in_array(
+							strtolower( ICL_LANGUAGE_CODE ),
+							array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) )
+						)
+					)
+				)
+			) ?
+			'' :
+			do_shortcode( wp_kses_post( $content ) )
+		);
+
 	}
 
 }
