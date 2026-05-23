@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas, aegkr
 Tags: woocommerce, product tabs, product, tab, tabs
 Requires at least: 4.4
-Tested up to: 6.8
-Stable tag: 1.7.4
+Tested up to: 7.0
+Stable tag: 1.7.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,10 @@ While free version allows you to add one global custom tab and one "per product"
 2. Setting product tabs on per product basis.
 
 == Changelog ==
+
+= 1.7.5 - 23/05/2026 =
+* Tested up to: 7.0.
+* WC tested up to: 10.7.
 
 = 1.7.4 - 05/09/2025 =
 * Fix - Vulnerability in the `[alg_wc_pt_translate]` shortcode.
