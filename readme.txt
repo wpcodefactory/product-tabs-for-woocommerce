@@ -2,8 +2,9 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas, aegkr
 Tags: woocommerce, product tabs, product, tab, tabs
 Requires at least: 4.4
-Tested up to: 7.0
-Stable tag: 1.7.5
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 1.8.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,10 +51,6 @@ Or, for example, you could add stock quantity info:
 Stock: [alg_wc_pt_product_function name="get_stock_quantity"]
 `
 
-### &#127942; Premium Version ###
-
-While free version allows you to add one global custom tab and one "per product" tab for each product, with [Product Tabs for WooCommerce Pro](https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/) you can add an **unlimited** number of custom product tabs.
-
 ### &#128472; Feedback ###
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
@@ -76,9 +73,26 @@ While free version allows you to add one global custom tab and one "per product"
 
 == Changelog ==
 
+= 1.8.0 - 07/10/2026 =
+* Dev - Output escaped.
+* Dev - Input sanitized.
+* Dev - Nonces added.
+* Dev - User capability checks added.
+* Dev - Shortcodes - `[alg_wc_pt_product_function]` - Allowed functions filters added.
+* Dev - Shortcodes - `[alg_wc_pt_product_add_to_cart_url]` shortcode added.
+* Dev - The free plugin version can now handle an unlimited number of custom product tabs.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.3).
+* Dev - WPFactory Cross-Selling - Library updated (to v1.1.7).
+* Dev - WPFactory Key Manager - Library updated (to v1.1.1).
+* WC tested up to: 11.1.
+* Tested up to: 7.1.
+* Requires PHP: 7.4.
+
 = 1.7.5 - 23/05/2026 =
-* Tested up to: 7.0.
 * WC tested up to: 10.7.
+* Tested up to: 7.0.
 
 = 1.7.4 - 05/09/2025 =
 * Fix - Vulnerability in the `[alg_wc_pt_translate]` shortcode.

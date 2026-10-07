@@ -1,15 +1,15 @@
-# Copyright (C) 2025 WPFactory
+# Copyright (C) 2026 WPFactory
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Additional Custom Product Tabs for WooCommerce 1.7.4\n"
+"Project-Id-Version: Additional Custom Product Tabs for WooCommerce 1.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-tabs-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-05T18:39:10+00:00\n"
+"POT-Creation-Date: 2026-10-07T16:28:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: product-tabs-for-woocommerce\n"
@@ -40,374 +40,369 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-product-tabs.php:185
+#: includes/class-alg-wc-product-tabs.php:187
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-product-tabs.php:190
+#: includes/class-alg-wc-product-tabs.php:192
 msgid "Go Pro"
 msgstr ""
 
 #: includes/class-alg-wc-product-tabs.php:235
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:40
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:45
-#: includes/settings/class-alg-wc-settings-product-tabs.php:28
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:47
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:52
+#: includes/settings/class-alg-wc-settings-product-tabs.php:35
 msgid "Product Tabs"
 msgstr ""
 
-#: includes/pro/class-alg-wc-product-tabs-pro.php:114
-msgid "Save product after you change this number."
-msgstr ""
-
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:25
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:33
 msgid "General"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:46
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:53
 msgid "Enable plugin"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:52
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:59
 msgid "Sections"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:56
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:25
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:63
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:33
 msgid "Standard Tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:58
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:65
 msgid "Customizes standard WooCommerce product tabs."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:68
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:25
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:75
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:33
 msgid "Custom Tabs: All Products"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:70
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:77
 msgid "Adds custom product tabs for all products globally."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:80
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:25
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:87
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:33
 msgid "Custom Tabs: Per Product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:82
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:89
 msgid "Sets options for custom tabs on per product basis (when enabled, will add meta boxes on each product's admin edit page)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:92
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:27
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:99
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:35
 msgid "Variations Tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:94
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:101
 msgid "Automatically add variations tabs to all variable products."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:107
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:231
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:114
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:284
 msgid "Advanced Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:112
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:119
 msgid "HTML paragraph tags"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:113
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:54
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:120
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:62
 msgid "Enable"
 msgstr ""
 
 #. Translators: %s: HTML paragraph tag.
-#: includes/settings/class-alg-wc-product-tabs-settings-general.php:116
+#: includes/settings/class-alg-wc-product-tabs-settings-general.php:123
 msgid "Replaces double line breaks with HTML paragraph tags (%s) in the custom tabs content."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:123
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:163
 msgid "Custom Product Tabs: All Products"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:125
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:165
 msgid "This section lets you add custom product tabs for all products globally. You can use shortcodes in tab's content."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:129
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:46
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:169
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:54
 msgid "Custom tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:129
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:169
 msgid "All products"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:130
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:47
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:45
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:50
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:170
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:55
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:53
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:58
 msgid "Enable section"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:136
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:176
 msgid "Custom product tabs number"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:137
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:177
 msgid "Click \"Save changes\" after you change this number."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:155
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:196
 msgid "Tab"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:160
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:132
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:85
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:90
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:60
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:91
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:122
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:62
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:201
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:167
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:110
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:115
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:68
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:99
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:130
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:70
 msgid "Title"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:161
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:182
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:62
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:93
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:124
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:63
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:202
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:223
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:70
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:101
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:132
 #: includes/settings/class-alg-wc-product-tabs-settings-variations.php:71
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:79
 msgid "You can use shortcodes here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:168
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:138
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:209
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:173
 msgid "ID"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:169
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:139
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:210
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:174
 msgid "This must be unique and cannot be empty."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:175
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:145
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:69
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:100
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:131
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:56
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:216
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:180
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:77
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:108
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:139
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:64
 msgid "Position"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:181
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:151
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:91
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:70
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:222
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:186
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:116
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:78
 msgid "Content"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:189
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:231
 msgid "Products to hide this tab for"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:190
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:232
 msgid "To hide this tab from some products, enter products here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:191
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:198
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:208
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:215
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:233
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:243
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:254
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:264
 msgid "Leave empty to show to all products."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:196
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:241
 msgid "Categories to hide this tab for"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:197
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:242
 msgid "To hide this tab from some categories, enter categories here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:206
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:252
 msgid "Products to show this tab for"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:207
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:253
 msgid "To show this tab only for some products, enter products here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:213
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:262
 msgid "Categories to show this tab for"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:214
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:263
 msgid "To show this tab only for some categories, enter categories here."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:236
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:289
 msgid "Products Show/Hide options type"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:241
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:294
 msgid "Multiselect list"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:242
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:295
 msgid "Comma separated text: IDs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:243
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:296
 msgid "Comma separated text: SKUs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:249
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:303
 msgid "Add SKU to products lists"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-global.php:250
+#: includes/settings/class-alg-wc-product-tabs-settings-global.php:304
 msgid "Enable this, if you want SKUs to be added to the products lists in \"Products to hide this tab\" and \"Products to show this tab\" options."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:40
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:48
 msgid "Custom Product Tabs: Per Product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:42
-msgid "This section lets you set options for custom tabs on per product basis. When enabled, will add metaboxes on each product's admin edit page."
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:50
+msgid "This section lets you set options for custom tabs on per product basis. When enabled, will add meta boxes on each product's admin edit page."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:46
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:54
 msgid "Per product"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:53
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:61
 msgid "Enable WP editor"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-local.php:60
+#: includes/settings/class-alg-wc-product-tabs-settings-local.php:68
 msgid "Default per product custom product tabs number"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:82
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:116
 msgid "Custom Product Tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:109
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:147
 msgid "Total number of custom tabs"
 msgstr ""
 
-#. Translators: %s: Plugin URL.
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:120
-msgid "Get <a href=\"%s\">Product Tabs for WooCommerce Pro</a> to change value."
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:159
+msgid "Save product after you change this number."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:159
+#: includes/settings/class-alg-wc-product-tabs-settings-per-product.php:194
 msgid "Custom Product Tab"
 msgstr ""
 
 #. Translators: %s: Option name.
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:84
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:109
 msgid "You can use shortcodes in \"%s\" option(s)."
 msgstr ""
 
 #. Translators: %1$s: Option name, %2$s: Option name.
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:89
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:114
 msgid "You can use shortcodes in \"%1$s\" and \"%2$s\" option(s)."
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Shortcode name.
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:96
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:121
 msgid "There are two main shortcodes in plugin: %1$s and %2$s."
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Documentation URL, %3$s: Shortcode examples.
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:102
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:127
 msgid "%1$s shortcode will display <a href=\"%2$s\" target=\"_blank\">product's function</a> result, for example: %3$s"
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Shortcode example.
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:111
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:136
 msgid "%1$s shortcode will display product's meta value, for example: %2$s"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-section.php:123
+#: includes/settings/class-alg-wc-product-tabs-settings-section.php:148
 msgid "Shortcodes"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:38
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:46
 msgid "Standard Product Tabs Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:40
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:48
 msgid "This section lets you customize standard product tabs."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:44
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:52
 msgid "Standard product tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:55
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:63
 msgid "Description"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:61
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:92
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:123
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:69
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:100
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:131
 msgid "Leave blank for WooCommerce default title."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:75
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:106
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:137
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:83
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:114
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:145
 msgid "Remove"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:76
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:107
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:138
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:84
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:115
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:146
 msgid "Remove tab from product page"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:86
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:94
 msgid "Additional information"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:117
+#: includes/settings/class-alg-wc-product-tabs-settings-standard.php:125
 msgid "Reviews"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:43
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:51
 msgid "Variations Product Tabs Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:45
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:53
 msgid "This section lets you automatically add variations tabs to all variable products (one tab for each variation)."
 msgstr ""
 
-#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:49
+#: includes/settings/class-alg-wc-product-tabs-settings-variations.php:57
 msgid "Variations tabs"
 msgstr ""
 
-#: includes/settings/class-alg-wc-settings-product-tabs.php:51
+#: includes/settings/class-alg-wc-settings-product-tabs.php:59
 msgid "Reset Settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-settings-product-tabs.php:56
+#: includes/settings/class-alg-wc-settings-product-tabs.php:64
 msgid "Reset section settings"
 msgstr ""
 
-#: includes/settings/class-alg-wc-settings-product-tabs.php:57
+#: includes/settings/class-alg-wc-settings-product-tabs.php:65
 msgid "Reset"
 msgstr ""
 
-#: includes/settings/class-alg-wc-settings-product-tabs.php:58
+#: includes/settings/class-alg-wc-settings-product-tabs.php:66
 msgid "Check the box and save changes to reset."
 msgstr ""
 
-#: includes/settings/class-alg-wc-settings-product-tabs.php:97
+#: includes/settings/class-alg-wc-settings-product-tabs.php:106
 msgid "Your settings have been reset."
 msgstr ""
