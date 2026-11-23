@@ -2,16 +2,16 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Additional Custom Product Tabs for WooCommerce 1.8.0\n"
+"Project-Id-Version: Additional Custom Product Tabs for WooCommerce 1.8.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/product-tabs-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-07T16:28:40+00:00\n"
+"POT-Creation-Date: 2026-11-23T12:48:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: product-tabs-for-woocommerce\n"
 
 #. Plugin Name of the plugin
@@ -119,6 +119,7 @@ msgstr ""
 
 #. Translators: %s: HTML paragraph tag.
 #: includes/settings/class-alg-wc-product-tabs-settings-general.php:123
+#, php-format
 msgid "Replaces double line breaks with HTML paragraph tags (%s) in the custom tabs content."
 msgstr ""
 
@@ -306,26 +307,31 @@ msgstr ""
 
 #. Translators: %s: Option name.
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:109
+#, php-format
 msgid "You can use shortcodes in \"%s\" option(s)."
 msgstr ""
 
 #. Translators: %1$s: Option name, %2$s: Option name.
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:114
+#, php-format
 msgid "You can use shortcodes in \"%1$s\" and \"%2$s\" option(s)."
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Shortcode name.
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:121
+#, php-format
 msgid "There are two main shortcodes in plugin: %1$s and %2$s."
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Documentation URL, %3$s: Shortcode examples.
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:127
+#, php-format
 msgid "%1$s shortcode will display <a href=\"%2$s\" target=\"_blank\">product's function</a> result, for example: %3$s"
 msgstr ""
 
 #. Translators: %1$s: Shortcode name, %2$s: Shortcode example.
 #: includes/settings/class-alg-wc-product-tabs-settings-section.php:136
+#, php-format
 msgid "%1$s shortcode will display product's meta value, for example: %2$s"
 msgstr ""
 

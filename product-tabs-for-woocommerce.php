@@ -3,14 +3,14 @@
  * Plugin Name: Additional Custom Product Tabs for WooCommerce
  * Plugin URI: https://wpfactory.com/item/product-tabs-for-woocommerce-plugin/
  * Description: Manage product tabs in WooCommerce. Beautifully.
- * Version: 1.8.0
+ * Version: 1.8.1
  * Author: WPFactory
  * Author URI: https://wpfactory.com
  * Requires at least: 4.4
  * Requires PHP: 7.4
  * Text Domain: product-tabs-for-woocommerce
  * Domain Path: /langs
- * WC tested up to: 11.1
+ * WC tested up to: 11.3
  * Requires Plugins: woocommerce
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -56,7 +56,7 @@ if ( 'product-tabs-for-woocommerce.php' === basename( __FILE__ ) ) {
 /**
  * Plugin version.
  */
-defined( 'ALG_WC_PRODUCT_TABS_VERSION' ) || define( 'ALG_WC_PRODUCT_TABS_VERSION', '1.8.0' );
+defined( 'ALG_WC_PRODUCT_TABS_VERSION' ) || define( 'ALG_WC_PRODUCT_TABS_VERSION', '1.8.1' );
 
 /**
  * Plugin file.

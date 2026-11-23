@@ -4,7 +4,7 @@ Tags: woocommerce, product tabs, product, tab, tabs
 Requires at least: 4.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,10 @@ Stock: [alg_wc_pt_product_function name="get_stock_quantity"]
 2. Setting product tabs on per product basis.
 
 == Changelog ==
+
+= 1.8.1 - 23/11/2026 =
+* WC tested up to: 11.3.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.4).
 
 = 1.8.0 - 07/10/2026 =
 * Dev - Output escaped.
